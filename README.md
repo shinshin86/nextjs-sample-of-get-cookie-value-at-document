@@ -6,12 +6,12 @@
 yarn dev
 ```
 
-Press the 'Add cookie value' button and the value will be added to the cookie.
-Then you will see that the cookie value is stored in the \_document.tsx side as well.
+Press the `Add cookie value(TestCookieValue)` button and the value will be added to the cookie.
+Then you will see that the cookie value is stored in the `_document.tsx` side as well.
 
 ## A case of not being able to get the value of a cookie
 
-If you comment out getServerSideProps, you can't get the value of the cookie.
+If you comment out `getServerSideProps`, you can't get the value of the cookie.
 
 ```diff
 diff --git a/pages/index.tsx b/pages/index.tsx

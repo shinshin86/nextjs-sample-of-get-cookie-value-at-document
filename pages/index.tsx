@@ -1,15 +1,20 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+const IndexPage: React.FC = (): JSX.Element => (
+  <div>
+    <h1>Next.js sample of get cookie value at document</h1>
+    <button
+      onClick={() => {
+        window.document.cookie = `TestCookieCalue=${Date.now()}`;
+        window.location.reload();
+      }}
+    >
+      Add cookie value(TestCookieValue)
+    </button>
+  </div>
+);
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+export async function getServerSideProps() {
+  console.log('----------> Call getServerSideProps');
+  return { props: {} };
+}
 
-export default IndexPage
+export default IndexPage;
